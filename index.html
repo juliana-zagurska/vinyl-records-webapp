@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Explore Page</title>
+ <link rel="stylesheet" type="text/css" href="css/styles.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <div class="navigation">
+            <button class="back-button" id="go-back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>BACK
+            </button>
+            </div>
+            <div class="icons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 9.32647C21 14.4974 12 20 12 20C12 20 3 14.4974 3 9.32647C3 2.30564 12 2.40044 12 8.57947C12 2.40044 21 2.49288 21 9.32647Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 18.2222V9.33333C21 8.86184 20.8104 8.40965 20.4728 8.07625C20.1352 7.74286 19.6774 7.55556 19.2 7.55556H13.1124C12.7781 7.55554 12.4503 7.46356 12.1659 7.28992C11.8816 7.11628 11.6518 6.86783 11.5023 6.57244L10.6977 4.98311C10.5482 4.68759 10.3182 4.43906 10.0337 4.2654C9.74912 4.09175 9.4212 3.99985 9.0867 4H4.8C4.32261 4 3.86477 4.1873 3.52721 4.5207C3.18964 4.8541 3 5.30628 3 5.77778V18.2222C3 18.6937 3.18964 19.1459 3.52721 19.4793C3.86477 19.8127 4.32261 20 4.8 20H19.2C19.6774 20 20.1352 19.8127 20.4728 19.4793C20.8104 19.1459 21 18.6937 21 18.2222Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+            </div>
+    </div>
+   
+<div class="main">
+    <section class="search">
+        <div class="search__artist" >
+            <input type="text" class="search-artist" placeholder="Artist" id="artistField" oninput="checkInputLength()">
+            <div id="lengthExceededMessage" class="hidden">Maximum input length exceeded.</div>
+        </div>
+        
+    <div class="search-dropdown">
+        <div class="search__genre">
+            <select>
+                <option value="" disabled selected>Genre</option>
+                <option value="rock">Rock</option>
+                <option value="pop">Pop</option>
+                <option value="hip-hop">Hip Hop</option>
+                <option value="electronic">Electronic</option>
+                <option value="jazz">Jazz</option>
+                <option value="alternative">Alternative</option>
+                <option value="classical">Classical</option>
+                <option value="country">Country</option>
+                <option value="blues">Blues</option>
+                <option value="metal">Metal</option>
+                <option value="punk">Punk</option>
+                <option value="dub">Dub</option>
+                <option value="funk">Funk</option>
+              <!-- Add more genre options as needed -->
+            </select>
+          </div>
+          <div class="search__decade">
+            <select>
+              <option value="" disabled selected>Decade</option>
+              <option value="1950">1950</option>
+              <option value="1960">1960</option>
+              <option value="1970">1970</option>
+              <option value="1980">1980</option>
+              <option value="1990">1990</option>
+              <option value="2000">2000</option>
+              <option value="2010">2010</option>
+              <option value="2020">2020</option>
+              <!-- Add more decade options as needed -->
+            </select>
+          </div>
+    </div>
+        <div class="search__country">
+            <select id="country" name="country">
+                <option value="" disabled selected>Select a country</option>
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">United Kingdom</option>
+                <option value="australia">Australia</option>
+                <option value="japan">Japan</option>
+                <option value="germany">Germany</option>
+              </select>
+        </div>
+    
+        <div class="search__button">
+            <button>Search</button>
+        </div>
+    </section>
+    <div class="record-list" id="record-list">
+        <!-- Records list is rendered from recordData array -->
+    </div>
+    <div class="footer">
+    <div class="pagination" id="pagination-container">
+        <button onclick="changePage(1)" id="page1">1</button>
+        <button onclick="changePage(2)" id="page2">2</button>
+        <button onclick="changePage(3)" id="page3">3</button>
+        <button onclick="changePage(4)" id="page4">4</button>
+        <button onclick="changePage(5)" id="page5">5</button>
+        <!-- Add more buttons as needed -->
+      </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

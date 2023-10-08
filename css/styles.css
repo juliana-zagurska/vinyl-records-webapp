@@ -1,0 +1,405 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Wrapper for the entire content */
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header, main content, footer */
+  min-height: 100vh;
+}
+
+/* Header styles */
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto; 
+  align-items: center;
+  background-color: #083644;
+  color: #fff;
+  padding: 17px 20px;
+}
+
+.icons {
+  justify-self: end; 
+}
+
+.icons svg:first-child {
+  margin-right: 18px; 
+}
+
+.back-button {
+  background-color: #083644;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0px;
+  align-items: center;
+  gap: 6px; 
+}
+
+.back-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Main content styles */
+.main {
+  display: grid;
+  grid-template-rows: auto auto; 
+  grid-gap: 18px;
+  padding: 20px 100px;
+  overflow-y: auto;
+}
+
+.search {
+  display: grid;
+  grid-template-rows: repeat(4, 42px);
+  grid-row-gap: 12px;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+}
+
+.search__artist,
+.search__genre,
+.search__decade,
+.search__country {
+  width: 100%;
+}
+
+
+.search__artist {
+  grid-row: 1;
+}
+
+#lengthExceededMessage {
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+
+.search-dropdown {
+  grid-row: 2;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 2fr 1fr;
+}
+
+.search__country {
+  grid-row: 3;
+  border-radius: 4px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+select:focus {
+  outline: none;
+  border-color: #555;
+}
+.search input {
+  padding: 10px;
+  width: 350px;
+  border-radius: 4px;
+  border: 1px solid #EDEEF0;
+  background: #FFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.search__genre select,
+.search__decade select {
+  padding: 10px; 
+  width: 181px; 
+  border: 1px solid #EDEEF0;
+  background: #FFF;
+  color: var(--ink-light, #6C7072);
+  box-sizing: border-box;
+  max-width: none; 
+}
+.search__country select {
+  padding: 10px; 
+  width: 100%; 
+  border: 1px solid #EDEEF0;
+  background: #FFF;
+  color: var(--ink-light, #6C7072);
+  box-sizing: border-box;
+  max-width: none; 
+}
+
+.search__button {
+  grid-row: 4;
+}
+
+.search__button button {
+  width: 100%;
+  height: 44px;
+  background-color: #083644;
+  color: white;
+  border-radius: 4px;
+  border-width: 0px;
+  cursor: pointer;
+}
+
+.record-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.record {
+  width: 100%;
+  display: grid;
+}
+.fa-heart{
+  position: absolute;
+  padding: 10px;
+  cursor: pointer;
+}
+.filled path {
+  fill: black;
+}
+
+.record img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  pointer-events: none;
+  
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+   
+}
+.record-header{
+  margin: 0px;
+}
+.record-text-data{
+ margin: 7px 0px 0px;
+}
+.record h1 {
+  color: #0A2530;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 8px 0px 3px;
+}
+.record h2 {
+  color: #0A2530;
+  font-family: 'Plus Jakarta Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+}
+.record p {
+  color: #738286;
+  font-family: 'Plus Jakarta Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px 0px 3px;
+}
+.record span {
+  color: #0A2530;
+  font-family: 'Plus Jakarta Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.add-button {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  padding: 0px;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  height: 44px;
+  margin: 8px 0px 0px;
+  border-radius: 4px;
+  color: #FFF;
+  font-family: 'Plus Jakarta Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background: #0A2530;
+}
+/* Footer styles */
+.footer {
+  background-color: #fff;
+  color: #fff;
+  padding: 0px 20px 36px 20px;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+}
+
+.pagination button {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #fff;
+  color: #0A2530;
+  border: 0px;
+}
+
+
+.pagination button:focus {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #0A2530;
+  color: #fff;
+  border: 0px;
+}
+.pagination .focused {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #0A2530;
+  color: #fff;
+  border: 0px;
+}
+.retina-image {
+  display: block;
+}
+
+.no-records-message {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  grid-column: 1 / span 3; 
+  color: rgb(197, 15, 15); 
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  /* Additional styles for mobile devices */
+  .header {
+    display: grid;
+    grid-template-columns: auto 1fr auto; 
+    align-items: center;
+    background-color: #083644;
+    color: #fff;
+    height: 62px;
+    padding: 0px;
+  }
+
+  .icons {
+    justify-self: end; 
+    padding: 0px 20px 0px 0px;
+  }
+  .back-button {
+    background-color: #083644;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0px 0px 0px 20px;
+    align-items: center;
+    gap: 6px; 
+  }
+  .main {
+    display: grid;
+    grid-template-rows: auto auto; 
+    grid-gap: 18px;
+    padding: 0px 0px 20px 0px;
+  }
+  
+  .search {
+    display: grid;
+    grid-template-rows: repeat(4, 42px);
+    grid-row-gap: 12px;
+    grid-template-columns: 1fr;
+    padding: 16px 20px 0px 20px;
+  }
+  .search__artist input[type="text"] {
+    padding-block: 0px;
+    padding-inline: 0px;
+    width: 100%;
+    height: 42px;
+    border: 1px solid #EDEEF0;
+    background: #FFF;
+  }
+
+  .search__artist input[type="text"]::placeholder {
+    padding: 10px; 
+  }
+
+  .search-dropdown {
+    grid-row: 2;
+    display: grid;
+    justify-content: center;
+    padding: 0px 0px;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 12px;
+  }
+
+  .search__genre select, .search__decade select {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #EDEEF0;
+    background: #FFF;
+    color: var(--ink-light, #6C7072);
+    box-sizing: border-box;
+    max-width: none;
+}
+
+  .record-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 0px 20px 0px;
+}
+.record {
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+}
+.record.hidden {
+  display: none;
+}
