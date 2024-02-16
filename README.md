@@ -9,3 +9,4 @@ User has an ability to :
 * mark records as favourites
 * mobile version is fully usable as well 
 
+check by link to GitHub Pages https://juliana-zagurska.github.io/vinyl-records-webapp/
